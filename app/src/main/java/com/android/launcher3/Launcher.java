@@ -2849,10 +2849,6 @@ public class Launcher extends Activity
             } else if (user == null || user.equals(UserHandleCompat.myUserHandle())) {
                 // Could be launching some bookkeeping activity
                 startActivity(intent, optsBundle);
-
-                if (isAllAppsVisible()) { // only add to the prediction if they open from the drawer
-                    predictiveAppsProvider.updateComponentCount(intent.getComponent());
-                }
             } else {
                 LauncherAppsCompat.getInstance(this).startActivityForProfile(
                         intent.getComponent(), user, intent.getSourceBounds(), optsBundle);
